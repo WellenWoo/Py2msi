@@ -27,8 +27,17 @@ pyinstaller:基于pyinstaller引擎打包。(本部分尚未实现)
 4. install pkgs按钮:安装必要的第三方库。
 
 generate exe按钮：生成windows下可执行文件(executable file)。
+点击按钮，将会在脚本文件的同一文件夹下生成一个build文件夹，
+可执行程序在build文件夹的子文件夹中。
+以本程序为例，py2msi.py为本程序的脚本，位于F盘，点击按钮，
+将会在F盘中生成build文件夹，而最终的目标程序路径为F:\build\exe.win32-2.7\py2msi.exe,如需发布程序，应该将该文件夹下其他文件一起发布，否则程序将不能正常运行。
+（事实上，用目前版本的本软件生成的程序将会含有不少的冗余文件，如果你碰巧漏掉
+或删除的文件不是你的程序运行所必需的，将不会造成影响。）
 
 generate msi按钮：生成windows下的安装文件(Windows installer)。
+点击按钮，将会在脚本文件的同一文件夹下生成一个build文件夹和一个dist文件夹。
+build文件夹中的内容与点击generate exe 按钮生成的完全相同，而在dist文件夹中
+将有一个msi文件，该msi文件即为目标文件，如需发布程序，直接将msi文件发布即可。
 
 ## Todo:
 增加深度定制功能。
@@ -36,6 +45,9 @@ generate msi按钮：生成windows下的安装文件(Windows installer)。
 增加py2exe引擎。
 
 增加pyinstaller引擎。
+
+## Notice:
+通过本程序生成的软件(无论是exe版本的还是msi版本的)不能确保你的源码不被反编译。
 
 ## Feedback:
 有任何疑问或建议欢迎反馈。
